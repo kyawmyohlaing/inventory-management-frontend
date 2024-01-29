@@ -1,7 +1,7 @@
 // App.js
 
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Dashboard from './components/dashboard/Dashboard';
 import Products from './components/products/Products';
 import Categories from './components/categories/Categories';
@@ -17,7 +17,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Switch>
+        <Routes>
           <Route exact path="/" component={Dashboard} />
           <Route path="/products" component={Products} />
          <Route path="/categories" component={Categories} /> 
@@ -28,7 +28,7 @@ function App() {
           <Route path="/settings" component={Settings} />
           <Route path="/backup" component={Backup} />
           <Route path="/notifications" component={Notifications} />
-        </Switch>
+        </Routes>
       </div>
     </Router>
   );
