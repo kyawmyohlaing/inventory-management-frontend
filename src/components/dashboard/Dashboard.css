@@ -1,0 +1,23 @@
+/* Dashboard.css */
+
+.dashboard-container {
+    padding: 20px;
+  }
+  
+  .sales-data-container {
+    margin-top: 20px;
+  }
+  
+  .sales-list,
+  .inventory-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sales-item,
+  .inventory-item {
+    margin-bottom: 10px;
+  }
+  
+  /* Add more CSS styles as needed */
+  
