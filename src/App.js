@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Dashboard from './components/dashboard/Dashboard';
 import Products from './components/products/Products';
 import Categories from './components/categories/Categories';
-import Purchases from './components/purchases/Purchases';
+import Purchases from './components/purchases/Purchases-1';
 import Sales from './components/sales/Sales';
 import Suppliers from './components/suppliers/Suppliers';
 import Reports from './components/reports/Reports';
