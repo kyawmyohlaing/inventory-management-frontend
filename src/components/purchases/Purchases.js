@@ -42,7 +42,7 @@ const Purchases = () => {
   const saveToDatabase = async () => {
     try {
       // Make a POST request to your backend API to save the products to the database
-      await axios.post('/api/products', products);
+      await axios.post('http://localhost:2000/api/products', products);
       alert('Products saved to database successfully!');
     } catch (error) {
       console.error('Error saving products to database:', error);
