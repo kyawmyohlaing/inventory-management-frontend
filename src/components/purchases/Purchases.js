@@ -3,13 +3,15 @@ import axios from 'axios'; // Import axios for making HTTP requests
 
 const Purchases = () => {
   const [products, setProducts] = useState([
-    { id: 1, name: 'Product A', quantity: 1, price: 10 },
-    { id: 2, name: 'Product B', quantity: 2, price: 20 },
-    // Initial product entries
+      { id: 1, name: 'Product A', quantity: 0, price: 0 },
+     // Initial product entries
+  
   ]);
 
   const addProduct = () => {
-    const newProduct = { id: products.length + 1, name: '', quantity: 0, price: 0 };
+    // Generate a unique ID for the new product
+    const newProductId = Math.max(...products.map(product => product.id), 0) + 1;
+    const newProduct = { id: newProductId, name: '', quantity: 0, price: 0 };
     setProducts([...products, newProduct]);
   };
 
