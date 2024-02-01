@@ -1,27 +1,23 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import axios from 'axios'; // Import Axios for making HTTP requests
-import './Product.css'; // Import the CSS file
+import axios from 'axios';
+import './Product.css';
 
 const Products = () => {
-  // Define state variables to store product data, loading state, and total amount
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [totalAmount, setTotalAmount] = useState(0);
 
-  // Define the fetchProducts function
   const fetchProducts = useCallback(async () => {
     try {
-      // Make a GET request to fetch products from the backend API
       const response = await axios.get('http://localhost:2000/api/products');
-      setProducts(response.data); // Update state with fetched products
-      setLoading(false); // Set loading to false once data is fetched
+      setProducts(response.data);
+      setLoading(false);
     } catch (error) {
       console.error('Error fetching products:', error);
-      setLoading(false); // Set loading to false in case of an error
+      setLoading(false);
     }
   }, []);
 
-  // Calculate the total amount of all products
   useEffect(() => {
     const calculateTotalAmount = () => {
       return products.reduce((total, product) => total + product.price * product.quantity, 0);
@@ -30,18 +26,16 @@ const Products = () => {
     setTotalAmount(calculateTotalAmount());
   }, [products]);
 
-  // Fetch product data from backend when the component mounts
   useEffect(() => {
     fetchProducts();
-  }, [fetchProducts]); // Add fetchProducts to the dependency array
+  }, [fetchProducts]);
 
-  // Render loading state while fetching data
   if (loading) {
     return <div>Loading...</div>;
   }
 
   return (
-    <div>
+    <div className="container">
       <h2>Products</h2>
       <table>
         <thead>
@@ -51,21 +45,25 @@ const Products = () => {
             <th>Price</th>
             <th>Quantity</th>
             <th>Amount</th>
+            <th>Image</th>
           </tr>
         </thead>
         <tbody>
-          {products.map(product => (
+          {products.map((product) => (
             <tr key={product._id}>
               <td>{product._id}</td>
               <td>{product.name}</td>
               <td>${product.price}</td>
               <td>{product.quantity}</td>
-              <td>${product.price * product.quantity}</td> {/* Amount calculation */}
+              <td>${product.price * product.quantity}</td>
+              <td>
+                <img src={product.image} alt={product.name} style={{ width: '100px', height: 'auto' }} />
+              </td>
             </tr>
           ))}
         </tbody>
       </table>
-      <div>Total Amount: ${totalAmount}</div>
+      <div className="total-amount">Total Amount: ${totalAmount}</div>
     </div>
   );
 };

@@ -9,6 +9,7 @@ import Suppliers from './components/suppliers/Suppliers';
 import Reports from './components/reports/Reports';
 import Settings from './components/settings/Settings';
 import Backup from './components/backup/Backup';
+import Customer from './components/customer/Customer';
 import Notifications from './components/notifications/Notifications'; // Import your Dashboard component
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="/Settings" element={<Settings />} />
           <Route path="/Backup" element={<Backup />} />
           <Route path="/Notifications" element={<Notifications />} />
+          <Route path="/Customer" element={<Customer />} />
         </Routes>
       </div>
     </Router>

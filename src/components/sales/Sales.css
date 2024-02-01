@@ -1,0 +1,89 @@
+/* Sales component container */
+.sales-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Title style */
+  .sales-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  /* Search bar style */
+  .search-bar {
+    margin-bottom: 15px;
+  }
+  
+  .search-input {
+    padding: 8px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Product select style */
+  .product-select {
+    margin-bottom: 15px;
+  }
+  
+  .product-dropdown {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Selected product style */
+  .selected-product {
+    margin-bottom: 20px;
+  }
+  
+  .product-details {
+    margin-bottom: 10px;
+  }
+  
+  .product-details p {
+    margin: 5px 0;
+  }
+  
+  /* Buttons style */
+  .button-container {
+    margin-top: 10px;
+  }
+  
+  .button-container button {
+    margin-right: 10px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .button-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Invoice style */
+  .invoice-container {
+    margin-top: 20px;
+  }
+  
+  .invoice-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .invoice-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .invoice-list li {
+    margin-bottom: 5px;
+  }
+  
