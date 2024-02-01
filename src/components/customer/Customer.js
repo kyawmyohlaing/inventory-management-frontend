@@ -74,6 +74,7 @@ const Customer = () => {
             onChange={(e) => setCustomerContact(e.target.value)}
             required
           />
+          <br></br>
           <button type="submit">Save Customer</button>
         </form>
       </div>
