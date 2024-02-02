@@ -42,3 +42,160 @@
     background-color: #0056b3;
   }
   
+
+   /* Customer.css */
+
+.customer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.customer-form-container {
+  width: 80%;
+  max-width: 600px;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+.customer-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.customer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.customer-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.customer-form input:focus {
+  outline: none;
+  border-color: #5b9dd9;
+  box-shadow: 0 0 5px rgba(91, 157, 217, 0.5);
+}
+
+.customer-list-container {
+  width: 80%;
+  max-width: 600px;
+  margin-top: 20px;
+  
+}
+
+.customer-list {
+  list-style: none;
+  padding: 0;
+}
+
+.customer-list-item {
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.customer-list-item:hover {
+  background-color: #f5f5f5;
+}
+
+.customer-details-container {
+  width: 80%;
+  max-width: 600px;
+  margin-top: 20px;
+  max-height: 200px; /* Set the maximum height for the customer details */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.customer-details {
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.customer-details h3 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.customer-details p {
+  color: #666;
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+/* Customer.css */
+
+/* Add the following styles to freeze the table header and scroll the tbody */
+.customer-table-container {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 20px;
+  overflow: auto; /* Enable scrolling for the tbody */
+}
+
+.customer-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* Fix the table layout to prevent column width changes */
+}
+
+.customer-table thead {
+  background-color: #f4f4f4; /* Add background color to the header */
+}
+
+.customer-table tr {
+  padding: 8px 12px;
+  text-align: left;
+}
+
+
+.customer-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2; /* Ensure the header stays on top of the tbody when scrolling */
+  background-color: #050505; /* Add background color to the sticky header */
+}
+
+.customer-table tbody {
+  display: block; /* Enable block display to allow scrolling */
+  overflow: auto; /* Enable scrolling for the tbody */
+  max-height: 300px; /* Set the maximum height for the tbody */
+  width: 300%;
+}
+
+.customer-table tbody tr {
+  display: table;
+  width: 100%; 
+  table-layout: fixed; /* Fix the layout of tbody rows */
+}
+
+.customer-table tbody td {
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0; /* Add border bottom for tbody rows */
+}
+
+
+
+
+
+
