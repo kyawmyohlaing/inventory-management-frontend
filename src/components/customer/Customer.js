@@ -55,8 +55,8 @@ const Customer = () => {
   const handleSearch = (event) => {
     const term = event.target.value;
     setSearchTerm(term);
-    const filtered = customers.filter((customer) =>
-      customer.name.toLowerCase().includes(term.toLowerCase())
+    const filtered = customers.filter(
+      (customer) => customer.name.toLowerCase().includes(term.toLowerCase())
       // customer.name.toLowerCase().includes(term)
     );
     setFilteredCustomers(filtered);
@@ -100,7 +100,7 @@ const Customer = () => {
           <button type="submit">Save Customer</button>
         </form>
       </div>
-      
+
       <div className="customer-list-container">
         <h2 className="customer-list-title">Customer List</h2>
 
@@ -110,53 +110,60 @@ const Customer = () => {
           value={searchTerm}
           onChange={handleSearch}
         />
-        {selectedCustomerDetails && (
+        {searchTerm && filteredCustomers.length === 0 && (
+          <p>No matching customers found.</p>
+        )}
+        {/* {selectedCustomerDetails && ( */}
+        {searchTerm && filteredCustomers.length > 0 && (
           <div>
-            {/* <h3>Selected Customer</h3>
+            <h3>Selected Customer</h3>{" "}
+            {/*
             <p><b>Name:</b> {selectedCustomerDetails.name}</p>
             <p><b>Address:</b> {selectedCustomerDetails.address}</p>
             <p><b>Contact</b> {selectedCustomerDetails.contact}</p> */}
             {filteredCustomers.map((customer) => (
-      <div key={customer._id}>
-        <p><b>Name:</b> {customer.name}</p>
-        <p><b>Address:</b> {customer.address}</p>
-        <p><b>Contact:</b> {customer.contact}</p>
-        <hr /> {/* Add a horizontal line to separate customer details */}
-      </div>
-    ))}
-            {/* <CCard style={{ width: "18rem" }}>
-              <CCardHeader>Selected Customer</CCardHeader>
-              <CListGroup flush>
-                <CListGroupItem>Name: {selectedCustomerDetails.name}</CListGroupItem>
-                <CListGroupItem>Address: {selectedCustomerDetails.address}</CListGroupItem>
-                <CListGroupItem>Contact: ${selectedCustomerDetails.contact}</CListGroupItem>
-              </CListGroup>
-            </CCard> */}
+              <div key={customer._id}>
+                <p>
+                  <b>Name:</b> {customer.name}
+                </p>
+                <p>
+                  <b>Address:</b> {customer.address}
+                </p>
+                <p>
+                  <b>Contact:</b> {customer.contact}
+                </p>
+                <hr />{" "}
+                {/* Add a horizontal line to separate customer details */}
+              </div>
+            ))}
           </div>
         )}
         <div className="customer-table-container">
-        <table className="customer-table">
-          <thead className="customer-table thead">
-            <tr className="customer-table thead tr">
-              <th className="customer-table thead th" >Name</th>
-              <th className="customer-table thead th">Address</th>
-              <th className="customer-table thead th">Contact</th>
-            </tr>
-          </thead> 
-          <tbody className="customer-table tbody">
-            {customers.map((customer) => (
-              <tr className="customer-table tbody tr" key={customer._id}>
-                <td className="customer-table tbody td">{customer.name}</td>
-                <td className="customer-table tbody td">{customer.address}</td>
-                <td className="customer-table tbody td">{customer.contact}</td>
+          <table className="customer-table">
+            <thead className="customer-table thead">
+              <tr className="customer-table thead tr">
+                <th className="customer-table thead th">Name</th>
+                <th className="customer-table thead th">Address</th>
+                <th className="customer-table thead th">Contact</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody className="customer-table tbody">
+              {customers.map((customer) => (
+                <tr className="customer-table tbody tr" key={customer._id}>
+                  <td className="customer-table tbody td">{customer.name}</td>
+                  <td className="customer-table tbody td">
+                    {customer.address}
+                  </td>
+                  <td className="customer-table tbody td">
+                    {customer.contact}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
-        </div> 
       </div>
-   
+    </div>
   );
 };
 
