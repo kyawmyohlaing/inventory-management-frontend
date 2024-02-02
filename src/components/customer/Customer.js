@@ -70,6 +70,13 @@ const Customer = () => {
     }
   };
 
+  const handleEditCustomer = (customer) => {
+    // Implement your logic to handle the edit action
+    console.log("Edit customer:", customer);
+    // You can navigate to a separate edit page or show a modal for editing
+  };
+  
+
   return (
     <div className="customer-container">
       <div className="customer-form-container">
@@ -145,6 +152,7 @@ const Customer = () => {
                 <th className="customer-table thead th">Name</th>
                 <th className="customer-table thead th">Address</th>
                 <th className="customer-table thead th">Contact</th>
+            
               </tr>
             </thead>
             <tbody className="customer-table tbody">
@@ -156,6 +164,11 @@ const Customer = () => {
                   </td>
                   <td className="customer-table tbody td">
                     {customer.contact}
+                  </td>
+                  <td className="customer-table tbody td">
+                    <button onClick={() => handleEditCustomer(customer)}>
+                      Edit
+                    </button>{" "}
                   </td>
                 </tr>
               ))}

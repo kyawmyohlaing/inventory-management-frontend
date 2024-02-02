@@ -1,7 +1,7 @@
 /* Customer.css */
 
 .customer-form {
-    max-width: 320px;
+    max-width: 350px;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ccc;
@@ -50,6 +50,7 @@
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
+  max-width: 400%;
 }
 
 .customer-form-container {
@@ -184,7 +185,7 @@
 
 .customer-table tbody tr {
   display: table;
-  width: 100%; 
+  width: 140%; 
   table-layout: fixed; /* Fix the layout of tbody rows */
 }
 
