@@ -57,12 +57,14 @@ const Customer = () => {
     setSearchTerm(term);
     const filtered = customers.filter((customer) =>
       customer.name.toLowerCase().includes(term.toLowerCase())
+      // customer.name.toLowerCase().includes(term)
     );
     setFilteredCustomers(filtered);
 
     // Automatically select the first matching customer if available
     if (filtered.length > 0) {
-      setSelectedCustomerDetails(filtered[0]);
+      // setSelectedCustomerDetails(filtered[0]);
+      setSelectedCustomerDetails(filtered);
     } else {
       setSelectedCustomerDetails(null);
     }
@@ -110,10 +112,18 @@ const Customer = () => {
         />
         {selectedCustomerDetails && (
           <div>
-            <h3>Selected Customer</h3>
+            {/* <h3>Selected Customer</h3>
             <p><b>Name:</b> {selectedCustomerDetails.name}</p>
             <p><b>Address:</b> {selectedCustomerDetails.address}</p>
-            <p><b>Contact</b> {selectedCustomerDetails.contact}</p>
+            <p><b>Contact</b> {selectedCustomerDetails.contact}</p> */}
+            {filteredCustomers.map((customer) => (
+      <div key={customer._id}>
+        <p><b>Name:</b> {customer.name}</p>
+        <p><b>Address:</b> {customer.address}</p>
+        <p><b>Contact:</b> {customer.contact}</p>
+        <hr /> {/* Add a horizontal line to separate customer details */}
+      </div>
+    ))}
             {/* <CCard style={{ width: "18rem" }}>
               <CCardHeader>Selected Customer</CCardHeader>
               <CListGroup flush>
